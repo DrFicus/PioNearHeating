@@ -565,41 +565,43 @@ section {
   opacity: 0.9;
 }
 
-/* ===== CONTACT (theme: bright-inverse — white bg, accent text) ===== */
+/* ===== CONTACT (white section, red content card) ===== */
 .contact {
   background: #fff;
-  color: var(--accent);
 }
 
 .contact .section-title {
-  color: var(--accent);
+  color: #fff;
   text-align: left;
 }
 
 .contact-subtitle {
-  color: var(--accent);
+  color: #fff;
   text-align: left;
   margin-left: 0;
   margin-bottom: 1.5rem;
+}
+
+.contact-content {
+  background: var(--accent);
+  color: #fff;
+  padding: 3rem;
+  border-radius: 16px;
 }
 
 /* Two-column layout: illustration left, content right */
 .contact-layout {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 4rem;
+  gap: 2rem;
   align-items: center;
 }
 
 .contact-illustration img {
-  width: 320px;
+  width: 420px;
   height: auto;
-  opacity: 0.9;
 }
 
-.contact-content {
-  max-width: 650px;
-}
 
 /* Contact booking block */
 .contact-book-block {
@@ -609,8 +611,8 @@ section {
 
 .btn-book-large {
   display: inline-block;
-  background: var(--accent);
-  color: #fff !important;
+  background: #fff;
+  color: var(--accent) !important;
   padding: 1.1rem 3rem;
   border: none;
   border-radius: 50px;
@@ -624,17 +626,17 @@ section {
 
 .btn-book-large:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(206, 32, 46, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .contact-direct {
   font-size: 1rem;
-  color: var(--accent);
-  opacity: 0.7;
+  color: #fff;
+  opacity: 0.8;
 }
 
 .contact-direct a {
-  color: var(--accent);
+  color: #fff;
   font-weight: 700;
   text-decoration: underline;
 }
@@ -725,6 +727,10 @@ section {
 }
 
 /* ===== MOBILE NAV LINKS (hidden on desktop) ===== */
+.mobile-nav-schedule {
+  display: none;
+}
+
 .mobile-nav-phone,
 .mobile-nav-email {
   display: none;
@@ -752,11 +758,17 @@ section {
 
   .contact-layout {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .contact-illustration {
-    display: none;
+    order: 2;
+    text-align: center;
+  }
+
+  .contact-illustration img {
+    width: 280px;
+    margin: 0 auto;
   }
 
   .contact .section-title,
@@ -902,24 +914,40 @@ section {
     align-items: center;
   }
 
-  /* Show phone & email inside mobile nav */
+  /* Show schedule, phone & email inside mobile nav */
+  .mobile-nav-schedule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: #fff !important;
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    margin-top: 1.5rem;
+  }
+
   .mobile-nav-phone,
   .mobile-nav-email {
     display: flex;
   }
 
   .mobile-nav-phone {
-    background: var(--accent);
-    color: #fff !important;
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.7) !important;
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+    font-size: 1rem !important;
+    margin-top: 0.5rem;
   }
 
   .mobile-nav-email {
     font-size: 0.95rem !important;
-    opacity: 0.8;
+    opacity: 0.6;
     text-decoration: underline;
   }
 
