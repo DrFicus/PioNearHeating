@@ -63,14 +63,14 @@
         <a href="#about">About Us</a>
         <a href="#contact">Contact Us</a>
         <button type="button" class="mobile-nav-schedule" onclick="HCPWidget.openModal()">Schedule a Visit</button>
-        <a href="tel:2315000053" class="mobile-nav-phone">231&bull;500&bull;0053</a>
+        <a href="tel:2315000053" class="mobile-nav-phone">231-500-0053</a>
         <a href="mailto:pionearheating@gmail.com" class="mobile-nav-email">pionearheating@gmail.com</a>
       </nav>
       <a href="/" class="header-logo">
         <img src="images/logo.png" alt="PioNear Heating">
       </a>
       <div class="header-actions">
-        <a href="tel:2315000053" class="btn-phone">231&bull;500&bull;0053</a>
+        <a href="tel:2315000053" class="btn-phone">231-500-0053</a>
         <button type="button" class="btn-schedule" onclick="HCPWidget.openModal()">Schedule a Visit</button>
       </div>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -147,14 +147,16 @@
             </div>
           </div>
           <h3>Cooling</h3>
-          <ul class="service-list">
-            <li>Central Air Conditioners</li>
-            <li>Minisplits</li>
-          </ul>
-          <p class="service-also">Limited service on:</p>
-          <ul class="service-list service-list-limited">
-            <li>Geothermal systems</li>
-          </ul>
+          <div class="service-details">
+            <ul class="service-list">
+              <li>Central Air Conditioners</li>
+              <li>Minisplits</li>
+            </ul>
+            <p class="service-also">Limited service on:</p>
+            <ul class="service-list service-list-limited">
+              <li>Geothermal systems</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Heating -->
@@ -165,26 +167,28 @@
             </div>
           </div>
           <h3>Heating</h3>
-          <ul class="service-list">
-            <li>Natural gas &amp; propane Furnaces</li>
-            <li>Natural gas &amp; propane Boilers</li>
-            <li>Heat pump systems</li>
-            <li>Minisplits</li>
-            <li>Natural gas &amp; propane water heaters</li>
-            <li>Tankless water heaters</li>
-            <li>Indirect boiler water heaters</li>
-            <li>Electric water heaters</li>
-            <li>Natural gas &amp; propane garage heaters</li>
-          </ul>
-          <p class="service-also">Limited service on:</p>
-          <ul class="service-list service-list-limited">
-            <li>Outdoor wood boilers</li>
-            <li>Fuel oil boilers &amp; furnaces</li>
-            <li>Gas log fireplaces</li>
-            <li>Geothermal systems</li>
-            <li>Electric baseboard heaters</li>
-            <li>Pool heaters</li>
-          </ul>
+          <div class="service-details">
+            <ul class="service-list">
+              <li>Natural gas &amp; propane Furnaces</li>
+              <li>Natural gas &amp; propane Boilers</li>
+              <li>Heat pump systems</li>
+              <li>Minisplits</li>
+              <li>Natural gas &amp; propane water heaters</li>
+              <li>Tankless water heaters</li>
+              <li>Indirect boiler water heaters</li>
+              <li>Electric water heaters</li>
+              <li>Natural gas &amp; propane garage heaters</li>
+            </ul>
+            <p class="service-also">Limited service on:</p>
+            <ul class="service-list service-list-limited">
+              <li>Outdoor wood boilers</li>
+              <li>Fuel oil boilers &amp; furnaces</li>
+              <li>Gas log fireplaces</li>
+              <li>Geothermal systems</li>
+              <li>Electric baseboard heaters</li>
+              <li>Pool heaters</li>
+            </ul>
+          </div>
         </div>
 
         <!-- & More -->
@@ -195,14 +199,16 @@
             </div>
           </div>
           <h3>&amp; More</h3>
-          <ul class="service-list">
-            <li>Thermostats</li>
-            <li>Whole house humidifiers</li>
-            <li>Whole house dehumidifiers</li>
-            <li>Zoning systems</li>
-            <li>Ductwork</li>
-            <li>Gas piping</li>
-          </ul>
+          <div class="service-details">
+            <ul class="service-list">
+              <li>Thermostats</li>
+              <li>Whole house humidifiers</li>
+              <li>Whole house dehumidifiers</li>
+              <li>Zoning systems</li>
+              <li>Ductwork</li>
+              <li>Gas piping</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -240,10 +246,6 @@
       <h2 class="section-title">What Our Customers Say</h2>
 
       <div class="reviews-grid">
-        <blockquote class="review-card">
-          <p>&ldquo;He came out to fix our water heater the same day, even though it meant a late Friday night in the snow. Very accommodating with our schedule, not charging after-hours fees, and was kind and knowledgeable.&rdquo;</p>
-          <cite>- Google Review</cite>
-        </blockquote>
         <blockquote class="review-card">
           <p>&ldquo;Matt saved me thousands of dollars by repairing my AC and not trying to sell me an entire new unit. I will trust PioNear Heating with all of my HVAC needs going forward.&rdquo;</p>
           <cite>- Glendon S.</cite>
@@ -354,6 +356,15 @@
         navLinks.classList.remove('open');
         menuToggle.classList.remove('active');
         if (mobileCta) mobileCta.style.display = '';
+      });
+    });
+
+    // Service card expand/collapse on mobile
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          card.classList.toggle('expanded');
+        }
       });
     });
 
