@@ -147,6 +147,7 @@
             </div>
           </div>
           <h3>Cooling</h3>
+          <p class="service-preview">Air Conditioners, Minisplits, Geothermal</p>
           <div class="service-details">
             <ul class="service-list">
               <li>Central Air Conditioners</li>
@@ -167,6 +168,7 @@
             </div>
           </div>
           <h3>Heating</h3>
+          <p class="service-preview">Furnaces, Boilers, Heat Pumps, Water Heaters &amp; More</p>
           <div class="service-details">
             <ul class="service-list">
               <li>Natural gas &amp; propane Furnaces</li>
@@ -199,6 +201,7 @@
             </div>
           </div>
           <h3>&amp; More</h3>
+          <p class="service-preview">Thermostats, Humidifiers, Ductwork, Gas Piping</p>
           <div class="service-details">
             <ul class="service-list">
               <li>Thermostats</li>
@@ -359,12 +362,10 @@
       });
     });
 
-    // Service card expand/collapse on mobile
+    // Service card expand/collapse
     document.querySelectorAll('.service-card').forEach(card => {
       card.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          card.classList.toggle('expanded');
-        }
+        card.classList.toggle('expanded');
       });
     });
 
