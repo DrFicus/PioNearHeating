@@ -507,12 +507,12 @@ section {
 
 /* ===== REVIEWS ===== */
 .reviews {
-  background: var(--dark-accent);
-  color: var(--white);
+  background: var(--white);
+  padding-bottom: 8rem;
 }
 
 .reviews .section-title {
-  color: var(--white);
+  color: var(--dark-accent);
 }
 
 .reviews-grid {
@@ -524,8 +524,9 @@ section {
 }
 
 .review-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #fff;
+  border: 1px solid rgba(20, 58, 53, 0.1);
+  border-left: 3px solid var(--accent);
   border-radius: 12px;
   padding: 2rem;
   margin: 0;
@@ -534,7 +535,7 @@ section {
 .review-card p {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--white);
+  color: var(--dark-accent);
   margin: 0 0 1rem;
   font-style: italic;
 }
@@ -542,7 +543,8 @@ section {
 .review-card cite {
   font-style: normal;
   font-size: 0.9rem;
-  color: rgba(241, 241, 239, 0.6);
+  color: var(--dark-accent);
+  opacity: 0.5;
   font-weight: 700;
 }
 
@@ -553,21 +555,23 @@ section {
 
 .reviews-google-link {
   display: inline-block;
-  color: var(--white);
+  color: var(--accent);
   font-weight: 700;
   font-size: 0.95rem;
-  opacity: 0.6;
+  opacity: 0.7;
   text-decoration: underline;
   transition: opacity 0.2s;
 }
 
 .reviews-google-link:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 /* ===== CONTACT (white section, red content card) ===== */
 .contact {
   background: #fff;
+  overflow: visible;
+  position: relative;
 }
 
 .contact .section-title {
@@ -594,7 +598,11 @@ section {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: end;
+}
+
+.contact-illustration {
+  margin-top: -8rem;
 }
 
 .contact-illustration img {
@@ -764,11 +772,16 @@ section {
   .contact-illustration {
     order: 2;
     text-align: center;
+    margin-top: 0;
   }
 
   .contact-illustration img {
     width: 280px;
     margin: 0 auto;
+  }
+
+  .reviews {
+    padding-bottom: 5rem;
   }
 
   .contact .section-title,
